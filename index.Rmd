@@ -1,0 +1,165 @@
+---
+title: "minidownで軽量・高機能なHTMLレポートを作成する"
+author: Atusy
+date: "`r Sys.Date()`"
+output:
+  minidown::mini_document:
+    toc: TRUE
+    toc_float: TRUE
+    toc_highlight: TRUE
+    footnote_tooltip: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+gh <- function(...) {
+  link <- file.path('https://github.com', ...)
+  sprintf('[%s](%s){target=_blank}', basename(link), link)
+}
+```
+
+# whoami
+
+![[Atusy](https://twitter.com/Atsushi776)](https://avatars.githubusercontent.com/u/30277794?v=4)
+
+## 趣味がRパッケージ開発の人
+
+### 特にR Markdown関連パッケージに貢献
+
+- `r gh('yihui/knitr')`
+- `r gh('rstudio/rmarkdown')`
+- `r gh('rstudio/bookdown')`
+- `r gh('rstudio/pagedown')`
+- ...
+
+### 自作パッケージ多数
+
+- `r gh('atusy/minidown')`
+- `r gh('atusy/ftExtra')`
+- `r gh('atusy/felp')`
+- ...
+
+## R関係の本も書いてる人
+
+### 商業誌
+
+- Rが生産性を高める〜データ分析ワークフロー効率化の実践 \
+  **(2022年1月発売予定!!)**
+
+### 同人誌
+
+- [RStudio PBCに転職しようとした〜選考過程と応募書類まとめ〜](https://atusy.booth.pm/items/2796523){style='color: inherit'}
+- [R MarkdownユーザーのためのPandoc’s Markdown](https://atusy.booth.pm/items/1453002){style='color: inherit'}
+
+## Rのコミュニティ運営に参加してる人
+
+### Osaka.R主催者
+
+毎朝朝もく開催してます。
+
+(最近は子育てであまり参加できてない)
+
+https://osaka-r.connpass.com
+
+### Pythonで仕事してる人
+
+HACARUS Inc.
+
+産業製品の概観検査とか画像解析系が主。
+
+# minidown
+
+## なぜ作ったのか
+
+`html_document`に不満があるから
+
+- 歴史が重く先進的な機能を盛り込みにくい
+    - コードや結果の折り畳みの自由度が低い
+    - 目次からタブを開けない
+    - HTML4のままでHTML Living Standardを使えない
+- 出力ファイルが重く、一般的なHTMLレポートに対して過剰なフレームワークを使っている
+    - 脱Bootstrapしたい
+    - 脱jQueryしたい
+    - Bootstrapの見た目はいらんけど機能は欲しいみたいなことをしにくい
+
+## ここが凄いぞ
+
+## コードや結果の折り畳みの自由度
+
+### code_folding
+
+チャンクの生成するコードブロックを種類に応じて自由に折り畳みできるぞ。
+
+- source
+- output
+- message
+- warning
+- error
+
+`html_document`はsourceしか折り畳めないぞ。
+
+<https://minidown.atusy.net/?framework=sakura&theme=default#code-folding>
+
+### results_folding
+
+sourceから出力されたものを全部折り畳めるぞ。
+グラフとかも隠せるから問題集で答えを隠す用途なんかにピッタリ。
+
+<https://minidown.atusy.net/?framework=sakura&theme=default#results-folding>
+
+### 目次からタブに飛べるぞ
+
+`html_document`では今のところできない。
+
+<https://minidown.atusy.net/?framework=sakura&theme=default#tabset>
+
+### 数式にKaTeXを採用
+
+`html_document`のMathJaxより速いぞ！
+
+(`html_document`でも使えるように[PR](https://github.com/rstudio/rmarkdown/pull/1940)はしてるよ)
+
+<https://minidown.atusy.net/?framework=sakura&theme=default#math-with-katex>
+
+### 多様なテーマ
+
+<https://minidown.atusy.net/?framework=sakura&theme=default#frameworks-and-themes>
+
+### めっちゃ軽い
+
+ほぼ`html_document`と同等の機能を持ちながら、600KB以上の軽量化に成功。
+
+- できるだけJavaScriptを使わずCSSでレスポンシブなデザインを実現
+- 有効化した機能の分しかCSS・JavaScriptを使わない
+
+<https://cran.r-project.org/web/packages/minidown/vignettes/Writing-vignettes-with-minidown.html#light-weight>
+
+### HTML Living Standard
+
+HTML4は古い。
+時代の最先端を追おう！
+
+### ツールチップ表示できる脚注（実験段階）
+
+詳細は脚注を見てね[^fn]
+
+[^fn]: マウスを重ねるだけで見れるよ。リンクをクリックしても良いよ。
+
+## さあインストールしよう
+
+```{r, eval=FALSE}
+install.packages('minidown')
+```
+
+# Enjoy & Gimme Stars! {.unlisted}
+
+GitHubで★をつけてくれるとめっちゃ喜びます。
+
+<https://github.com/atusy/minidown>
+
+thankyoustarsパッケージを使うのもいいですね。
+
+> [ThankYouStarsで感謝の気持ちをスターで伝えよう](https://www.slideshare.net/ksmzn/thankyoustars)
