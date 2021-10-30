@@ -87,9 +87,9 @@ HACARUS Inc.
 
 ## ここが凄いぞ
 
-## コードや結果の折り畳みの自由度
+### コードや結果の折り畳みの自由度
 
-### code_folding
+#### code_folding
 
 チャンクの生成するコードブロックを種類に応じて自由に折り畳みできるぞ。
 
@@ -103,7 +103,7 @@ HACARUS Inc.
 
 <https://minidown.atusy.net/?framework=sakura&theme=default#code-folding>
 
-### results_folding
+#### results_folding
 
 sourceから出力されたものを全部折り畳めるぞ。
 グラフとかも隠せるから問題集で答えを隠す用途なんかにピッタリ。
