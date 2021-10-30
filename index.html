@@ -313,60 +313,6 @@ margin: 0;
 padding: 0;
 }
 </style>
-  <style type="text/css">.tooltip {
-position: relative;
-display: inline-block;
-}
-.tooltip:before, .tooltip:after {
-position: absolute;
-opacity: 0;
-clip: rect(0 0 0 0);
--webkit-clip-path: inset(100%);
-clip-path: inset(100%);
-transition: all 0.3s;
-z-index: 1010;
-left: 50%;
-}
-.tooltip:not(.bottom):before, .tooltip:not(.bottom):after {
-bottom: 75%;
-}
-.tooltip.bottom:before, .tooltip.bottom:after {
-top: 75%;
-}
-.tooltip:hover:before, .tooltip:hover:after, .tooltip:focus:before, .tooltip:focus:after {
-opacity: 1;
-clip: auto;
--webkit-clip-path: inset(0%);
-clip-path: inset(0%);
-}
-.tooltip:before {
-content: '';
-background: transparent;
-border: 0.5rem solid transparent;
-left: calc(50% - 0.5rem);
-}
-.tooltip:not(.bottom):before {
-border-top-color: #212121;
-}
-.tooltip.bottom:before {
-border-bottom-color: #212121;
-}
-.tooltip:after {
-content: attr(aria-label);
-color: #fafafa;
-background: #212121;
-border-radius: 0.125rem;
-padding: 0.5rem;
-white-space: nowrap;
-transform: translateX(-50%);
-}
-.tooltip:not(.bottom):after {
-margin-bottom: 1rem;
-}
-.tooltip.bottom:after {
-margin-top: 1rem;
-}
-</style>
   <style type="text/css">:root {
 --toc-width: 300px;
 }
@@ -650,7 +596,7 @@ padding: 0 0 0 4rem;
 </section>
 <section id="ツールチップ表示できる脚注実験段階" class="level3">
 <h3>ツールチップ表示できる脚注（実験段階）</h3>
-<p>詳細は脚注を見てね<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>詳細は脚注を見てね<span title="マウスを重ねるだけで見れるよ。リンクをクリックしても良いよ。"><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></span></p>
 </section>
 </section>
 <section id="さあインストールしよう" class="level2">
